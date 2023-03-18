@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-US" data-scrapbook-source="#" data-scrapbook-create="20230318063638508"><head>
+<!DOCTYPE html><html lang="en-US" data-scrapbook-source="#"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Web Vulnerability Scanner</title>
@@ -296,7 +296,7 @@ let mode=window.localStorage.getItem("mode"),root=document.getElementsByTagName(
                                     <div class="fluentform-widget-heading">
                                                                     </div>
                 
-                <div class="fluentform fluentform_wrapper_3"><form data-form_id="3" id="fluentform_3" class="frm-fluent-form fluent_form_3 ff-el-form-top ff_form_instance_3_1 ff-form-loading" data-form_instance="ff_form_instance_3_1" method="POST"><input type="hidden" name="__fluent_form_embded_post_id" value="7449"><input type="hidden" id="_fluentform_3_fluentformnonce" name="_fluentform_3_fluentformnonce" value="7dc5559259"><input type="hidden" name="_wp_http_referer" value="/scanner/"><div class="ff-el-group"><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for="ff_3_email">Company Email</label> </div><div class="ff-el-input--content"><input type="email" name="email" id="ff_3_email" class="ff-el-form-control" data-name="email" value=""></div></div><div class="ff-el-group"><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for="ff_3_url">Website URL</label> </div><div class="ff-el-input--content"><input type="url" name="url" class="ff-el-form-control" data-name="url" id="ff_3_url" value=""></div></div><div class="ff-el-group ff-text-left ff_submit_btn_wrapper"><button type="submit" class="ff-btn ff-btn-submit ff-btn-md ff_btn_style wpf_has_custom_css">Scan</button></div></form><div id="fluentform_3_errors" class="ff-errors-in-stack ff_form_instance_3_1 ff-form-loading_errors ff_form_instance_3_1_errors"></div></div>        <script type="text/javascript">
+                <div class="fluentform fluentform_wrapper_3"><form data-form_id="3" id="fluentform_3" class="frm-fluent-form fluent_form_3 ff-el-form-top ff_form_instance_3_1 ff-form-loading" data-form_instance="ff_form_instance_3_1" name="google-sheet" method="POST"><input type="hidden" name="__fluent_form_embded_post_id" value="7449"><input type="hidden" id="_fluentform_3_fluentformnonce" name="_fluentform_3_fluentformnonce" value="7dc5559259"><input type="hidden" name="_wp_http_referer" value="/scanner/"><div class="ff-el-group"><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for="ff_3_email">Company Email</label> </div><div class="ff-el-input--content"><input type="email" name="email" id="ff_3_email" class="ff-el-form-control" data-name="email" value=""></div></div><div class="ff-el-group"><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for="ff_3_url">Website URL</label> </div><div class="ff-el-input--content"><input type="url" name="url" class="ff-el-form-control" data-name="url" id="ff_3_url" value=""></div></div><div class="ff-el-group ff-text-left ff_submit_btn_wrapper"><button type="submit" class="ff-btn ff-btn-submit ff-btn-md ff_btn_style wpf_has_custom_css">Scan</button></div></form><div id="fluentform_3_errors" class="ff-errors-in-stack ff_form_instance_3_1 ff-form-loading_errors ff_form_instance_3_1_errors"></div></div>        <script type="text/javascript">
             window.fluent_form_ff_form_instance_3_1 = {"id":"3","settings":{"layout":{"labelPlacement":"top","helpMessagePlacement":"with_label","errorMessagePlacement":"inline","asteriskPlacement":"asterisk-right"},"restrictions":{"denyEmptySubmission":{"enabled":false}}},"form_instance":"ff_form_instance_3_1","form_id_selector":"fluentform_3","rules":{"email":{"required":{"value":true,"message":"This field is required"},"email":{"value":true,"message":"This field must contain a valid email"}},"url":{"required":{"value":true,"message":"This field is required"},"url":{"value":true,"message":"This field must contain a valid url"}}}};
                     </script>
                     </div>
@@ -425,4 +425,17 @@ Call: <a href="tel:+91 1234567890" target="_blank" rel="noopener">+91 1234567890
 <script src="theme.min.js" id="silicon-script-js"></script>
 <script src="jquery.min.js" id="jquery-core-js"></script>
 <script src="jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbwvixkb34daJ8m2ljjA6XfGbTwpiNHUEZfav58OlqaCSkWc4amKGyHOtdDYJ5vb8us/exec'
+	const form = document.forms['google-sheet']
+
+	form.addEventListener('submit',e=>{
+		e.preventDefault()
+		fetch(scriptURL, {method:'POST',body: new FormData(form)})
+		.then(response => {if(alert("Your response is successfully submitted.")){}
+		else    window.location.reload();})
+		.catch(error => console.log('Error',error.message))
+	})
+
+</script>
 </body></html>
