@@ -1,0 +1,245 @@
+# Nmap 7.93 scan initiated Sun Mar 19 00:03:32 2023 as: nmap -sV --script vulners --script-args mincvss=5.0 -iL ips.txt -oA output
+Nmap scan report for ec2-44-228-249-3.us-west-2.compute.amazonaws.com (44.228.249.3)
+Host is up (0.0091s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+80/tcp  open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 500 Software caused connection abort
+|     Date: Sun, 19 Mar 2023 04:04:57 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|     Connection: close
+|   GetRequest: 
+|     HTTP/1.1 502 Connection reset by peer
+|     Date: Sun, 19 Mar 2023 04:04:56 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|     Connection: close
+|   HTTPOptions: 
+|     HTTP/1.1 502 Connection reset by peer
+|     Date: Sun, 19 Mar 2023 04:04:57 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|_    Connection: close
+443/tcp open  https?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.93%I=7%D=3/19%Time=641689E9%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C9,"HTTP/1\.1\x20502\x20Connection\x20reset\x20by\x20peer\r\nDat
+SF:e:\x20Sun,\x2019\x20Mar\x202023\x2004:04:56\x20GMT\r\nCache-Control:\x2
+SF:0no-cache\r\nPragma:\x20no-cache\r\nContent-Type:\x20text/html;\x20char
+SF:set=\"UTF-8\"\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n")
+SF:%r(HTTPOptions,C9,"HTTP/1\.1\x20502\x20Connection\x20reset\x20by\x20pee
+SF:r\r\nDate:\x20Sun,\x2019\x20Mar\x202023\x2004:04:57\x20GMT\r\nCache-Con
+SF:trol:\x20no-cache\r\nPragma:\x20no-cache\r\nContent-Type:\x20text/html;
+SF:\x20charset=\"UTF-8\"\r\nContent-Length:\x200\r\nConnection:\x20close\r
+SF:\n\r\n")%r(FourOhFourRequest,D1,"HTTP/1\.1\x20500\x20Software\x20caused
+SF:\x20connection\x20abort\r\nDate:\x20Sun,\x2019\x20Mar\x202023\x2004:04:
+SF:57\x20GMT\r\nCache-Control:\x20no-cache\r\nPragma:\x20no-cache\r\nConte
+SF:nt-Type:\x20text/html;\x20charset=\"UTF-8\"\r\nContent-Length:\x200\r\n
+SF:Connection:\x20close\r\n\r\n");
+
+Nmap scan report for ec2-44-238-29-244.us-west-2.compute.amazonaws.com (44.238.29.244)
+Host is up (0.12s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    Microsoft IIS httpd 8.5
+|_http-server-header: Microsoft-IIS/8.5
+| vulners: 
+|   cpe:/a:microsoft:internet_information_services:8.5: 
+|_    	CVE-2014-4078	5.1	https://vulners.com/cve/CVE-2014-4078
+443/tcp open  https?
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for ec2-35-81-188-86.us-west-2.compute.amazonaws.com (35.81.188.86)
+Host is up (0.0082s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    Apache httpd 2.4.25 ((Debian))
+|_http-server-header: Apache/2.4.25 (Debian)
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.25: 
+|     	CVE-2019-9517	7.8	https://vulners.com/cve/CVE-2019-9517
+|     	CVE-2022-31813	7.5	https://vulners.com/cve/CVE-2022-31813
+|     	CVE-2022-23943	7.5	https://vulners.com/cve/CVE-2022-23943
+|     	CVE-2022-22720	7.5	https://vulners.com/cve/CVE-2022-22720
+|     	CVE-2021-44790	7.5	https://vulners.com/cve/CVE-2021-44790
+|     	CVE-2021-39275	7.5	https://vulners.com/cve/CVE-2021-39275
+|     	CVE-2021-26691	7.5	https://vulners.com/cve/CVE-2021-26691
+|     	CVE-2017-7679	7.5	https://vulners.com/cve/CVE-2017-7679
+|     	CVE-2017-3169	7.5	https://vulners.com/cve/CVE-2017-3169
+|     	CVE-2017-3167	7.5	https://vulners.com/cve/CVE-2017-3167
+|     	CNVD-2022-73123	7.5	https://vulners.com/cnvd/CNVD-2022-73123
+|     	CNVD-2022-03225	7.5	https://vulners.com/cnvd/CNVD-2022-03225
+|     	CNVD-2021-102386	7.5	https://vulners.com/cnvd/CNVD-2021-102386
+|     	EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB	7.2	https://vulners.com/exploitpack/EXPLOITPACK:44C5118F831D55FAF4259C41D8BDA0AB	*EXPLOIT*
+|     	EDB-ID:46676	7.2	https://vulners.com/exploitdb/EDB-ID:46676	*EXPLOIT*
+|     	CVE-2019-0211	7.2	https://vulners.com/cve/CVE-2019-0211
+|     	1337DAY-ID-32502	7.2	https://vulners.com/zdt/1337DAY-ID-32502	*EXPLOIT*
+|     	FDF3DFA1-ED74-5EE2-BF5C-BA752CA34AE8	6.8	https://vulners.com/githubexploit/FDF3DFA1-ED74-5EE2-BF5C-BA752CA34AE8	*EXPLOIT*
+|     	CVE-2021-40438	6.8	https://vulners.com/cve/CVE-2021-40438
+|     	CVE-2020-35452	6.8	https://vulners.com/cve/CVE-2020-35452
+|     	CVE-2018-1312	6.8	https://vulners.com/cve/CVE-2018-1312
+|     	CVE-2017-15715	6.8	https://vulners.com/cve/CVE-2017-15715
+|     	CNVD-2022-03224	6.8	https://vulners.com/cnvd/CNVD-2022-03224
+|     	8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	6.8	https://vulners.com/githubexploit/8AFB43C5-ABD4-52AD-BB19-24D7884FF2A2	*EXPLOIT*
+|     	4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	6.8	https://vulners.com/githubexploit/4810E2D9-AC5F-5B08-BFB3-DDAFA2F63332	*EXPLOIT*
+|     	4373C92A-2755-5538-9C91-0469C995AA9B	6.8	https://vulners.com/githubexploit/4373C92A-2755-5538-9C91-0469C995AA9B	*EXPLOIT*
+|     	0095E929-7573-5E4A-A7FA-F6598A35E8DE	6.8	https://vulners.com/githubexploit/0095E929-7573-5E4A-A7FA-F6598A35E8DE	*EXPLOIT*
+|     	CVE-2022-28615	6.4	https://vulners.com/cve/CVE-2022-28615
+|     	CVE-2021-44224	6.4	https://vulners.com/cve/CVE-2021-44224
+|     	CVE-2019-10082	6.4	https://vulners.com/cve/CVE-2019-10082
+|     	CVE-2017-9788	6.4	https://vulners.com/cve/CVE-2017-9788
+|     	CVE-2019-0217	6.0	https://vulners.com/cve/CVE-2019-0217
+|     	CVE-2022-22721	5.8	https://vulners.com/cve/CVE-2022-22721
+|     	CVE-2020-1927	5.8	https://vulners.com/cve/CVE-2020-1927
+|     	CVE-2019-10098	5.8	https://vulners.com/cve/CVE-2019-10098
+|     	1337DAY-ID-33577	5.8	https://vulners.com/zdt/1337DAY-ID-33577	*EXPLOIT*
+|     	SSV:96537	5.0	https://vulners.com/seebug/SSV:96537	*EXPLOIT*
+|     	EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D	5.0	https://vulners.com/exploitpack/EXPLOITPACK:C8C256BE0BFF5FE1C0405CB0AA9C075D	*EXPLOIT*
+|     	EDB-ID:42745	5.0	https://vulners.com/exploitdb/EDB-ID:42745	*EXPLOIT*
+|     	CVE-2022-30556	5.0	https://vulners.com/cve/CVE-2022-30556
+|     	CVE-2022-29404	5.0	https://vulners.com/cve/CVE-2022-29404
+|     	CVE-2022-28614	5.0	https://vulners.com/cve/CVE-2022-28614
+|     	CVE-2022-26377	5.0	https://vulners.com/cve/CVE-2022-26377
+|     	CVE-2022-22719	5.0	https://vulners.com/cve/CVE-2022-22719
+|     	CVE-2021-34798	5.0	https://vulners.com/cve/CVE-2021-34798
+|     	CVE-2021-33193	5.0	https://vulners.com/cve/CVE-2021-33193
+|     	CVE-2021-26690	5.0	https://vulners.com/cve/CVE-2021-26690
+|     	CVE-2020-9490	5.0	https://vulners.com/cve/CVE-2020-9490
+|     	CVE-2020-1934	5.0	https://vulners.com/cve/CVE-2020-1934
+|     	CVE-2019-17567	5.0	https://vulners.com/cve/CVE-2019-17567
+|     	CVE-2019-10081	5.0	https://vulners.com/cve/CVE-2019-10081
+|     	CVE-2019-0220	5.0	https://vulners.com/cve/CVE-2019-0220
+|     	CVE-2019-0196	5.0	https://vulners.com/cve/CVE-2019-0196
+|     	CVE-2018-17199	5.0	https://vulners.com/cve/CVE-2018-17199
+|     	CVE-2018-17189	5.0	https://vulners.com/cve/CVE-2018-17189
+|     	CVE-2018-1333	5.0	https://vulners.com/cve/CVE-2018-1333
+|     	CVE-2018-1303	5.0	https://vulners.com/cve/CVE-2018-1303
+|     	CVE-2017-9798	5.0	https://vulners.com/cve/CVE-2017-9798
+|     	CVE-2017-7668	5.0	https://vulners.com/cve/CVE-2017-7668
+|     	CVE-2017-7659	5.0	https://vulners.com/cve/CVE-2017-7659
+|     	CVE-2017-15710	5.0	https://vulners.com/cve/CVE-2017-15710
+|     	CNVD-2022-73122	5.0	https://vulners.com/cnvd/CNVD-2022-73122
+|     	CNVD-2022-53584	5.0	https://vulners.com/cnvd/CNVD-2022-53584
+|     	CNVD-2022-53582	5.0	https://vulners.com/cnvd/CNVD-2022-53582
+|     	CNVD-2022-03223	5.0	https://vulners.com/cnvd/CNVD-2022-03223
+|     	1337DAY-ID-28573	5.0	https://vulners.com/zdt/1337DAY-ID-28573	*EXPLOIT*
+|_    	PACKETSTORM:152441	0.0	https://vulners.com/packetstorm/PACKETSTORM:152441	*EXPLOIT*
+443/tcp open  https?
+
+Nmap scan report for ec2-44-228-249-3.us-west-2.compute.amazonaws.com (44.228.249.3)
+Host is up (0.0084s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+80/tcp  open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 500 Software caused connection abort
+|     Date: Sun, 19 Mar 2023 04:04:57 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|     Connection: close
+|   GetRequest: 
+|     HTTP/1.1 502 Connection reset by peer
+|     Date: Sun, 19 Mar 2023 04:04:56 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|     Connection: close
+|   HTTPOptions: 
+|     HTTP/1.1 502 Connection reset by peer
+|     Date: Sun, 19 Mar 2023 04:04:57 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|_    Connection: close
+443/tcp open  https?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.93%I=7%D=3/19%Time=641689E9%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C9,"HTTP/1\.1\x20502\x20Connection\x20reset\x20by\x20peer\r\nDat
+SF:e:\x20Sun,\x2019\x20Mar\x202023\x2004:04:56\x20GMT\r\nCache-Control:\x2
+SF:0no-cache\r\nPragma:\x20no-cache\r\nContent-Type:\x20text/html;\x20char
+SF:set=\"UTF-8\"\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n")
+SF:%r(HTTPOptions,C9,"HTTP/1\.1\x20502\x20Connection\x20reset\x20by\x20pee
+SF:r\r\nDate:\x20Sun,\x2019\x20Mar\x202023\x2004:04:57\x20GMT\r\nCache-Con
+SF:trol:\x20no-cache\r\nPragma:\x20no-cache\r\nContent-Type:\x20text/html;
+SF:\x20charset=\"UTF-8\"\r\nContent-Length:\x200\r\nConnection:\x20close\r
+SF:\n\r\n")%r(FourOhFourRequest,D1,"HTTP/1\.1\x20500\x20Software\x20caused
+SF:\x20connection\x20abort\r\nDate:\x20Sun,\x2019\x20Mar\x202023\x2004:04:
+SF:57\x20GMT\r\nCache-Control:\x20no-cache\r\nPragma:\x20no-cache\r\nConte
+SF:nt-Type:\x20text/html;\x20charset=\"UTF-8\"\r\nContent-Length:\x200\r\n
+SF:Connection:\x20close\r\n\r\n");
+
+Nmap scan report for ec2-44-238-29-244.us-west-2.compute.amazonaws.com (44.238.29.244)
+Host is up (0.0069s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    Microsoft IIS httpd 8.5
+|_http-server-header: Microsoft-IIS/8.5
+| vulners: 
+|   cpe:/a:microsoft:internet_information_services:8.5: 
+|_    	CVE-2014-4078	5.1	https://vulners.com/cve/CVE-2014-4078
+443/tcp open  https?
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for ec2-44-228-249-3.us-west-2.compute.amazonaws.com (44.228.249.3)
+Host is up (0.0075s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE    VERSION
+80/tcp  open  http-proxy (bad gateway)
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 500 Software caused connection abort
+|     Date: Sun, 19 Mar 2023 04:04:57 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|     Connection: close
+|   GetRequest: 
+|     HTTP/1.1 502 Connection reset by peer
+|     Date: Sun, 19 Mar 2023 04:04:56 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|     Connection: close
+|   HTTPOptions: 
+|     HTTP/1.1 502 Connection reset by peer
+|     Date: Sun, 19 Mar 2023 04:04:57 GMT
+|     Cache-Control: no-cache
+|     Pragma: no-cache
+|     Content-Type: text/html; charset="UTF-8"
+|     Content-Length: 0
+|_    Connection: close
+443/tcp open  https?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.93%I=7%D=3/19%Time=641689E9%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,C9,"HTTP/1\.1\x20502\x20Connection\x20reset\x20by\x20peer\r\nDat
+SF:e:\x20Sun,\x2019\x20Mar\x202023\x2004:04:56\x20GMT\r\nCache-Control:\x2
+SF:0no-cache\r\nPragma:\x20no-cache\r\nContent-Type:\x20text/html;\x20char
+SF:set=\"UTF-8\"\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n")
+SF:%r(HTTPOptions,C9,"HTTP/1\.1\x20502\x20Connection\x20reset\x20by\x20pee
+SF:r\r\nDate:\x20Sun,\x2019\x20Mar\x202023\x2004:04:57\x20GMT\r\nCache-Con
+SF:trol:\x20no-cache\r\nPragma:\x20no-cache\r\nContent-Type:\x20text/html;
+SF:\x20charset=\"UTF-8\"\r\nContent-Length:\x200\r\nConnection:\x20close\r
+SF:\n\r\n")%r(FourOhFourRequest,D1,"HTTP/1\.1\x20500\x20Software\x20caused
+SF:\x20connection\x20abort\r\nDate:\x20Sun,\x2019\x20Mar\x202023\x2004:04:
+SF:57\x20GMT\r\nCache-Control:\x20no-cache\r\nPragma:\x20no-cache\r\nConte
+SF:nt-Type:\x20text/html;\x20charset=\"UTF-8\"\r\nContent-Length:\x200\r\n
+SF:Connection:\x20close\r\n\r\n");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Mar 19 00:08:36 2023 -- 6 IP addresses (6 hosts up) scanned in 304.44 seconds
