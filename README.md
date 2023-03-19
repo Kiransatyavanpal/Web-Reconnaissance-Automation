@@ -56,6 +56,6 @@ The project includes the following scripts:
 * **mail.py:** sends the generated reported via email to the user.
 
 
-** License
+## License
 This project is licensed under the MIT License.
 
